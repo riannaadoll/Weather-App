@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div class="card">
-    <!-- Header (Search bar va tugmalar) -->
     <div class="header-actions">
         <div class="search">
             <input type="text" placeholder="Enter city name" spellcheck="false">
@@ -26,10 +24,7 @@
     <div class="error">
         <p>Invalid city name</p>
     </div>
-
-    <!-- Main Dashboard (2 Ustunli) -->
-    <div class="weather">
-        <!-- Chap Ustun: Hozirgi Ob-havo -->
+   <div class="weather">
         <div class="dashboard-left">
             <div class="current-weather">
                 <img src="images/rainn.png" class="weather-icon" alt="weather icon">
@@ -54,26 +49,20 @@
                 </div>
             </div>
         </div>
-
-        <!-- O'ng Ustun: Soatlik va Haftalik prognozlar -->
         <div class="dashboard-right">
             <div class="forecast-section">
                 <h3>Hourly Forecast</h3>
                 <div class="hourly-list">
-                    <!-- JS to'ldiradi -->
                 </div>
             </div>
-
             <div class="forecast-section">
                 <h3>5-Day Forecast</h3>
                 <div class="daily-list">
-                    <!-- JS to'ldiradi -->
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>

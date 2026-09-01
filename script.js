@@ -4,8 +4,6 @@ const searchBtn = document.querySelector(".search-btn");
 const locationBtn = document.querySelector(".location-btn");
 const themeToggle = document.querySelector("#themeToggle");
 const weatherIcon = document.querySelector(".weather-icon");
-
-// 1. Weather Data Fetcher (By City Name)
 async function checkWeather(city) {
     const currentUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiKey}`;
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${city}&appid=${apiKey}`;
@@ -25,14 +23,12 @@ async function checkWeather(city) {
         const forecastData = await forecastRes.json();
         updateForecast(forecastData);
 
-        document.querySelector(".weather").style.display = "grid"; // Yonma-yon chiqishi uchun grid
+        document.querySelector(".weather").style.display = "grid"; 
         document.querySelector(".error").style.display = "none";
     } catch (err) {
         console.error("Fetch error:", err);
     }
 }
-
-// 2. Weather Data Fetcher (By Coordinates)
 async function checkWeatherByCoords(lat, lon) {
     const currentUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${lat}&lon=${lon}&appid=${apiKey}`;
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=${lat}&lon=${lon}&appid=${apiKey}`;
@@ -52,8 +48,6 @@ async function checkWeatherByCoords(lat, lon) {
         console.error("Coords Fetch error:", err);
     }
 }
-
-// 3. Current Weather UI Updater
 function updateCurrentWeather(data) {
     document.querySelector(".city").innerHTML = data.name;
     document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
@@ -67,16 +61,12 @@ function updateCurrentWeather(data) {
     else if (condition.includes("snow")) weatherIcon.src = "images/snow.png";
     else weatherIcon.src = "images/sun.png";
 }
-
-// 4. Hourly & Daily Forecast UI Updater
 function updateForecast(data) {
     const hourlyList = document.querySelector(".hourly-list");
     const dailyList = document.querySelector(".daily-list");
 
     hourlyList.innerHTML = "";
     dailyList.innerHTML = "";
-
-    // Hourly (Keyingi 24 soat)
     data.list.slice(0, 8).forEach(item => {
         const date = new Date(item.dt * 1000);
         const hours = date.getHours().toString().padStart(2, '0') + ":00";
@@ -92,8 +82,6 @@ function updateForecast(data) {
             </div>
         `;
     });
-
-    // Daily Forecast
     for (let i = 0; i < data.list.length; i += 8) {
         const item = data.list[i];
         const date = new Date(item.dt * 1000);
@@ -112,7 +100,6 @@ function updateForecast(data) {
         `;
     }
 }
-
 function getIconName(condition) {
     const cond = condition.toLowerCase();
     if (cond.includes("rain")) return "rain";
@@ -121,8 +108,6 @@ function getIconName(condition) {
     if (cond.includes("snow")) return "snow";
     return "clear";
 }
-
-// 5. Dark / Light Mode Toggle
 themeToggle.addEventListener("click", () => {
     const currentTheme = document.body.getAttribute("data-theme");
     if (currentTheme === "dark") {
@@ -131,8 +116,6 @@ themeToggle.addEventListener("click", () => {
         document.body.setAttribute("data-theme", "dark");
     }
 });
-
-// 6. Geolocation Button Event
 locationBtn.addEventListener("click", () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -147,8 +130,6 @@ locationBtn.addEventListener("click", () => {
         alert("Geolocation is not supported by your browser.");
     }
 });
-
-// Search Events
 searchBox.addEventListener("keydown", (e) => {
     if (e.key === "Enter") searchBtn.click();
 });
