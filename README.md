@@ -1,23 +1,34 @@
-# 🌤️ Weather App
+# 🌤️ Modern Weather & Forecast Dashboard
 
-A modern, responsive, and user-friendly weather application built using HTML, CSS, and JavaScript. This app allows users to fetch real-time weather information for any city around the globe.
+A responsive, feature-rich Weather Dashboard application built with Vanilla JavaScript, HTML5, and CSS3. The application fetches real-time weather data and multi-day forecasts using the OpenWeatherMap API, featuring an intuitive UI with Glassmorphism design aesthetics.
 
-## 🚀 Features
+![Weather App Preview](https://via.placeholder.com/800x400?text=Weather+Dashboard+Preview)
 
-- 🔍 **City Search:** Easily search weather conditions for any city worldwide.
-- 🌡️ **Detailed Metrics:** Displays temperature, humidity levels, and wind speed.
-- 🎨 **Dynamic Visuals:** Automatically updates weather icons/images based on current conditions (rain, snow, clouds, clear sky, etc.).
-- 📱 **Responsive Design:** Optimized for both mobile and desktop screens.
+## ✨ Key Features
+
+* **Real-time Weather Data:** Displays current temperature, weather conditions, humidity, and wind speed for any city worldwide.
+* **Hourly & 5-Day Forecasts:** Visually showcases 24-hour weather trends and daily temperature ranges ($Min^\circ C / Max^\circ C$).
+* **Geolocation Detection:** One-click location access to get instant weather updates for your current position.
+* **Dark / Light Theme Toggle:** Seamless mode switching using custom CSS Variables for personalized viewing.
+* **Fully Responsive UI:** Glassmorphic two-column grid layout optimized for desktop and mobile screens.
+* **Error Handling:** User-friendly alerts and visual feedback for invalid city names or network issues.
 
 ## 🛠️ Tech Stack
 
-* **HTML5** — Structure and markup
-* **CSS3** — Custom styling and layout design
-* **JavaScript (ES6+)** — Application logic and API integration
-* **OpenWeatherMap API** — Real-time weather data provider
+* **Frontend:** HTML5, CSS3 (CSS Grid, Flexbox, CSS Variables), JavaScript (ES6+)
+* **API Integration:** OpenWeatherMap API (Current Weather & 5-Day / 3-Hour Forecast API)
+* **Browser APIs:** Fetch API, HTML5 Geolocation API
 
-## 💻 Getting Started
+## 🚀 Getting Started
 
-1. Clone the repository to your local machine:
+To run this project locally on your machine, follow these simple steps:
+
+### Prerequisites
+* A modern web browser (Chrome, Firefox, Safari, Edge)
+* An active API key from [OpenWeatherMap](https://openweathermap.org/)
+
+### Installation
+
+1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/riannaadoll/weather-app.git](https://github.com/riannaadoll/weather-app.git)
+   git clone [https://github.com/YOUR_USERNAME/weather-app.git](https://github.com/riannaadoll/weather-app.git)
