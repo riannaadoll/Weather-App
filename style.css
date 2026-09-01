@@ -270,16 +270,15 @@ body {
         grid-template-columns: 1fr;
     }
     .search {
-    display: flex;
-    align-items: center;
-    gap: 6px; 
+    justify-content: space-between;
+    gap: 4px; 
    }
 
    .search input {
-    flex: 1; 
-    min-width: 0; 
-    padding: 10px 12px;
-    font-size: 14px;
+    width: 110px !important; 
+    flex: none !important; 
+    padding: 8px 10px;
+    font-size: 13px;
    }
 
    .search button,  #themeToggle {
